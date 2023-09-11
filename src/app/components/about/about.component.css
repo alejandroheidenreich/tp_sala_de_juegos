@@ -38,6 +38,9 @@ body{
 .about-img img{
     display: block;
     width: 200px;
+    background-image: url("../../../assets/perf.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .about-img{
     width: 200px;
