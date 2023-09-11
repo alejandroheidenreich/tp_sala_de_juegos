@@ -1,0 +1,66 @@
+.cardContainer{
+    width: 1500px;
+    height: 900px;
+    position:fixed;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 15.5rem;
+}
+
+.card-header{
+    background-color: #00ff40;
+    font-weight: 700;
+}
+
+.card-body{
+    padding: 0.5rem;
+    background-image: url("../../../assets/logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.imgEnviar:active{
+    transform: scale(0.8);
+}
+
+.enviado{
+    display: block;
+    float: right;
+    background-color: teal;
+    color: white;
+    min-width: 50.01%;
+    border-radius: 10px;
+    text-align: left;
+
+}
+
+.recibido{
+    display: block;
+    float: left;
+    background-color: gray;
+    color: white;
+    min-width: 50.01%;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.contendedorMensajes{
+    overflow: scroll;
+    padding: 0.3rem;
+}
+
+.contendedorMensajes::-webkit-scrollbar{
+    display: none;
+}
+
+p{
+    display: flex;
+    flex-direction: column;
+}
+p>span{
+    display: flex;
+    float: right;
+    font-size: x-small;
+    margin-right: 0.5rem;
+    margin-top: 0.3rem;
+    
+}

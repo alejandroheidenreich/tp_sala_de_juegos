@@ -1,0 +1,96 @@
+<!-- <div class="container">
+    <h1 class="text-light">“ Quién Soy ”</h1>
+    <hr class="text-light">
+    <div class="row">
+        <div class="col3 justify-content-center">
+            <img src="../../../assets/perf.jpg" alt="perfil">
+            <h2 class="text-light">Alejandro Heidenreich</h2>
+        </div>
+        <div class="col5">
+
+        </div>
+    </div>
+
+</div> -->
+
+<!-- <div class="container text-light">
+    <div class="header">
+        <h1>“ Quién Soy ”</h1>
+        <hr>
+    </div>
+    <div class="image">
+        <img src="../../../assets/perf.jpg" alt="perfil">
+    </div>
+    <div class="intro column">
+        <h2>Introduccion</h2>
+        <p>
+            I am a 28 year old finnish web developer with science and art background. I love to spend my free time renovating my home, playing and going on long walks with my dog. I love scifi and fantasy literature and
+            series. 
+        </p>
+    </div>
+    <div class="skills column">
+        <h3>My Skills</h3>
+        <ul id="skill-list">
+            <li>Web Development</li>
+            <li>Design process</li>
+            <li>Teamwork</li>						
+            <li>Analytical skills</li>
+        </ul>
+    </div>
+    <div class="main-text">
+        <h3>More About Me</h3>
+        <p>
+            I have studied chemistry but have always been interested in web development. I was 10 years old when I made my first web page with HTML and CSS. While I was studying in the university I took computer science  as my minor subject and was introduced to programming. During my studies I was an active member in student associations and became responsible for all kinds of tasks and projects including being a web master. That and my previous interest in web development created a spark to turn my hobby into a career. I took my first steps towards my new career in January 2017.
+        </p>
+        <p>
+            I'm highly energetic and motivated person and I love to work as a member or a leader of a team. I especially enjoy working with changing projects and taking them forward with rapid pace but high precision. I am talkative and sociable but also known for getting "in the zone" while concentrating on detailed work like programming or designing.
+        </p>
+    </div>
+</div>
+ -->
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  
+ <div class = "about-wrapper text-light">
+    <div class = "about-left">
+      <div class = "about-left-content">
+        <div>
+          <div class = "shadow">
+            <div class = "about-img">
+              <img src = "../../../assets/perf.jpg" alt="perfil" alt = "about image">
+            </div>
+          </div>
+
+          <h2>Alejandro<br>Heidenreich</h2>
+          <h3>Laboratorio IV</h3>
+        </div>
+
+        <ul class = "icons">
+          <li><i class = "fab fa-google"></i></li>
+          <li><i class = "fab fa-github"></i></li>
+          <li><i class = "fab fa-angular"></i></li>
+          <!-- <li><i class = "fab fa-instagram"></i></li> -->
+        </ul>
+      </div>
+    </div>
+
+    <div class = "about-right text-dark">
+      <h1 ><span>“</span>Quién Soy<span>”</span></h1>
+      <!-- <h2>“ Quién Soy ”</h2> -->
+      <div class = "about-btns">
+        <button type = "button" class = "btn btn-green" (click)="mostrarDiv(0)">datos personales</button>
+        <button type = "button" class = "btn btn-white" (click)="mostrarDiv(1)">juego propio</button>
+      </div>
+
+      <div class = "about-para" *ngIf="divMostrada === 0">
+        <p>Nombre: Alejandro</p>
+        <p>Apellido: Heidenreich</p>
+        <p>Email: heidenreich.alejandro@gmail.com</p>
+        <p>Materia: Laboratorio IV</p>
+        <p>Division: B</p>
+      </div>
+      <div class = "about-para" *ngIf="divMostrada === 1">
+        <p>Juego no definido</p>
+      </div>
+    </div>
+  </div>

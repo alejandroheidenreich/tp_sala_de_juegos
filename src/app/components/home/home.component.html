@@ -1,0 +1,42 @@
+<div class="row" id="main">
+    <div class="row">
+        <div class="col-2">
+            <app-sidebar (salida) = "mostrar($event)"></app-sidebar>
+        </div>
+        <div class="col-10 mt-3">
+            <div class="row">
+                
+                <div class="col-10" *ngIf="visible === 'home' "  >
+                        <h1 class="text-light">Inicio</h1>
+                        <h2 class="text-light">Bienvenido {{usuario}}!</h2>
+                        <!-- <button type="button" class="btn btn-primary ">Boton</button> -->
+                        <!-- <app-about></app-about> -->
+                        <!-- <app-chat></app-chat> -->
+                    </div>
+                    <div class="col-10" *ngIf="visible === 'about' "  >
+     
+                        <app-about></app-about>
+                    </div>
+                    <div class="col-10" *ngIf="visible === 'rank' "  >
+                        <h1 class="text-light">Ranking</h1>
+            
+                    </div>
+                    <div class="col-10" *ngIf="visible === 'chat' "  >
+                        <!-- <h1 class="text-light">Chat</h1> -->
+        
+                        <app-chat></app-chat>
+                    </div>
+                    <div class="col-10" *ngIf="visible === 'juegos' "  >
+                        <h1 class="text-light">Juegos</h1>
+                   
+                    </div>
+                    <div class="col-10" *ngIf="visible === 'encuesta' "  >
+                        <h1 class="text-light">Encuesta</h1>
+                      
+                    </div>
+            </div>
+        
+        </div>
+</div>
+
+

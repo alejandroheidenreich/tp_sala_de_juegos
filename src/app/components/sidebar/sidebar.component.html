@@ -1,0 +1,63 @@
+<!-- <div class="area"></div> -->
+<nav class="main-menu">
+    <ul>
+        <li>
+            <a (click)="elegir('home')">
+                <i class="fa fa-home fa-2x"></i>
+                <span class="nav-text">
+                    Inicio
+                </span>
+            </a>
+        </li>
+        <li class="has-subnav">
+            <a (click)="elegir('juegos')">
+                <i class="fa fa-gamepad fa-2x"></i>
+                <span class="nav-text">
+                    Juegos
+                </span>
+            </a>
+        </li>
+        <li class="has-subnav">
+            <a (click)="elegir('chat')">
+                <i class="fa fa-comments fa-2x"></i>
+                <span class="nav-text">
+                    Chat
+                </span>
+            </a>
+        </li>
+        <li>
+            <a (click)="elegir('rank')">
+                <i class="fa fa-star fa-2x"></i>
+                <span class="nav-text">
+                    Ranking
+                </span>
+            </a>
+        </li>
+        <li>
+            <a (click)="elegir('encuesta')">
+                <i class="fa fa-book fa-2x"></i>
+                <span class="nav-text">
+                    Encuestas
+                </span>
+            </a>
+        </li>
+        <li>
+            <a (click)="elegir('about')">
+                <i class="fa fa-info-circle fa-2x"></i>
+                <span class="nav-text">
+                    “ Quién Soy ”
+                </span>
+            </a>
+        </li>
+    </ul>
+    <ul class="logout">
+        <li>
+            <a (click)="logout()">
+                <i class="fa fa-power-off fa-2x"></i>
+                <span class="nav-text">
+                    Logout
+                </span>
+            </a>
+        </li>  
+    </ul>
+</nav>
