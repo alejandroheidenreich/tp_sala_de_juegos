@@ -59,12 +59,14 @@ export class LoginComponent {
   }
 
   autolog(){
-    this.authService.login("test@gmail.com", "123123").then(res=> {
-      console.log("Se logeo", res);
-      if (res != null) {
-        this.router.navigateByUrl("/home");
-      }
-    });
+    this.usuario.email = "test@gmail.com";
+    this.usuario.clave = "123123";
+    // this.authService.login("test@gmail.com", "123123").then(res=> {
+    //   console.log("Se logeo", res);
+    //   if (res != null) {
+    //     this.router.navigateByUrl("/home");
+    //   }
+    // });
   }
   
 }
