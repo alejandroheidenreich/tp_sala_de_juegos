@@ -1,0 +1,43 @@
+  <section>
+   <div class="signin"> 
+
+    <div class="content"> 
+
+     <h2>SIGN UP</h2> 
+
+     <div class="form"> 
+
+      <div class="inputBox"> 
+
+       <input type="email" required [(ngModel)] = "usuario.email"> <i>Username</i> 
+
+      </div> 
+
+      <div class="inputBox"> 
+
+       <input type="password" required [(ngModel)] = "usuario.clave"> <i>Password</i> 
+
+      </div> 
+      
+      <div class="inputBox">
+        <input type="password" required [(ngModel)] = "claveConfirm"> <i>Confirm Password</i> 
+      </div>
+
+      <div class="links">  
+        <a></a>
+        <a routerLink="/login">Already register?</a> 
+      </div> 
+
+      <div class="inputBox"> 
+
+       <input type="submit" value="Register" (click)="registrar()"> 
+
+      </div> 
+      
+      </div> 
+
+     </div> 
+
+    </div> 
+  </section>
+ 

@@ -1,0 +1,51 @@
+<div class="container text-light">
+
+<div class="row">
+    <div class="col text-center">
+      <h1 class="display-1">Juego del Ahorcado</h1>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col text-center tex">
+      <img
+        src="assets/ahorcado/{{intentos}}.png"
+        class="ahorcado-img"
+        alt="ahorcado"
+        style="width: 20%"
+      />
+      <h3 class="badge bg-secondary text-wrap">INTENTOS: <small>{{intentos}} / 9 </small></h3>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col text-center">
+      <h1>{{palabraOculta}}</h1>
+    </div>
+  </div>
+  
+  <div class="row" *ngIf="partida==undefined">
+    <div class="col text-center">
+      <button 
+      (click)="comprobar(letra)" 
+  *ngFor="let letra of letras" 
+  [style.background-color]="botonesClickeados[letra] ? '#292b2c' : '#0275d8'"
+  class="btn text-light">
+  {{ letra.toUpperCase() }}
+    </button>
+    </div>
+  </div>
+  <div class="row" *ngIf="partida==true">
+    <div class="col text-center">
+      <h1 class="text-success">Sos el mejor, ganaste !!</h1>
+      <button class="btn btn-secondary" (click)="reiniciar()">REINCIAR</button>
+    </div>
+  </div>
+  <div class="row" *ngIf="partida==false">
+    <div class="col text-center">
+      <h3 class="text-danger">Perdiste por horrible, borralo</h3>
+      <h4 class="text-primary">La palabra era: "{{palabra}}", ZOQUETE!!</h4>
+      <button class="btn btn-secondary" (click)="reiniciar()">REINCIAR</button>
+    </div>
+  </div>
+</div>

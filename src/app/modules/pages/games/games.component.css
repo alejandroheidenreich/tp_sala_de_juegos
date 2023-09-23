@@ -1,0 +1,15 @@
+.row{
+    margin: 0;
+    padding-left: 15%;
+    padding-top: 5%;
+    
+}
+
+.card{
+    background-color: #0f0;
+    box-shadow: black 5px 5px 0px;
+}
+
+img{
+    padding: 5%;
+}
