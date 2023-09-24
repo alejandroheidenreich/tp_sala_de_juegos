@@ -1,4 +1,28 @@
-<div class="container mt-5">
+<div class="container mt-5 text-light text-center">
 
-  <h1 class="text-light">PROXIMAMENTE</h1>
+  <h1 class="">Preguntados</h1>
+  <h2 class="badge bg-secondary text-wrap">PREGUNTAS CORRECTAS: {{contadorCorrectas}}</h2>
+
+  <h2>Categoria: {{categoria}}</h2>
+
+
+  <h3>Pregunta: {{pregunta}}</h3>
+
+
+  <div class="row px-5">
+    <h3>Opciones:</h3>
+
+    <div class="col mx-5" *ngFor="let opcion of opciones">
+      <button class="btn btn-primary mt" (click)="comprobar(opcion)">{{ opcion }}</button>
+    </div>
+
+
+  </div>
+
+  <div class="time-countdown">
+    <ul>
+      Tiempo restante: {{segundos}} s
+    </ul>
+  </div>
+  <img src="assets/preguntadosFONDO.png" alt="logo">
 </div>

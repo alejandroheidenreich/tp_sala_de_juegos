@@ -1,0 +1,582 @@
+{
+    "preguntas": [
+        {
+            "category": "Entertainment: Books",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Which author and poet famously wrote the line, 'The female of the species is more deadly than the male'?",
+            "correct_answer": "Rudyard Kipling",
+            "incorrect_answers": [
+                "Edgar Allan Poe",
+                "William Shakespeare",
+                "William Wordsworth"
+            ]
+        },
+        {
+            "category": "History",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In relation to the British Occupation in Ireland, what does the IRA stand for.",
+            "correct_answer": "Irish Republican Army",
+            "incorrect_answers": [
+                "Irish Rebel Alliance",
+                "Irish Reformation Army",
+                "Irish-Royal Alliance"
+            ]
+        },
+        {
+            "category": "Geography",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What are the four corner states of the US?",
+            "correct_answer": "Utah, Colorado, Arizona, New Mexico",
+            "incorrect_answers": [
+                "Oregon, Idaho, Nevada, Utah",
+                "Kansas, Oklahoma, Arkansas, Louisiana",
+                "South Dakota, Minnesota, Nebraska, Iowa"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "boolean",
+            "difficulty": "medium",
+            "question": "The sum of all the numbers on a roulette wheel is 666.",
+            "correct_answer": "True",
+            "incorrect_answers": [
+                "False"
+            ]
+        },
+        {
+            "category": "History",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "The creator of the Enigma Cypher and Machine was of what nationality?",
+            "correct_answer": "German",
+            "incorrect_answers": [
+                "American",
+                "British",
+                "Polish"
+            ]
+        },
+        {
+            "category": "Geography",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Which nation claims ownership of Antarctica?",
+            "correct_answer": "No one, but there are claims.",
+            "incorrect_answers": [
+                "United States of America",
+                "United Nations",
+                "Australia"
+            ]
+        },
+        {
+            "category": "Entertainment: Japanese Anime & Manga",
+            "type": "boolean",
+            "difficulty": "easy",
+            "question": "Studio Ghibli is a Japanese animation studio responsible for the films 'Wolf Children' and 'The Boy and the Beast'.",
+            "correct_answer": "False",
+            "incorrect_answers": [
+                "True"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "When was Steam first released?",
+            "correct_answer": "2003",
+            "incorrect_answers": [
+                "2004",
+                "2011",
+                "2007"
+            ]
+        },
+        {
+            "category": "Politics",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "The 2014 movie 'The Raid 2: Berandal' was mainly filmed in which Asian country?",
+            "correct_answer": "Indonesia",
+            "incorrect_answers": [
+                "Thailand",
+                "Brunei",
+                "Malaysia"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "The internet domain .fm is the country-code top-level domain for which Pacific Ocean island nation?",
+            "correct_answer": "Micronesia",
+            "incorrect_answers": [
+                "Fiji",
+                "Tuvalu",
+                "Marshall Islands"
+            ]
+        },
+        {
+            "category": "Entertainment: Musicals & Theatres",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Who wrote the award winning musical 'In The Heights'?",
+            "correct_answer": "Lin-Manuel Miranda",
+            "incorrect_answers": [
+                "Steven Sondheim",
+                "Francis Scott Key",
+                "John Phillips Sousa"
+            ]
+        },
+        {
+            "category": "Science & Nature",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What polymer is used to make CDs, safety goggles and riot shields?",
+            "correct_answer": "Polycarbonate",
+            "incorrect_answers": [
+                "Rubber",
+                "Nylon",
+                "Bakelite"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Which CS:GO eSports team won the major event ESL One Cologne 2016?",
+            "correct_answer": "SK Gaming",
+            "incorrect_answers": [
+                "Team Liquid",
+                "Fnatic",
+                "Virtus.pro"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Which of these is NOT a song featured on the Lockjaw EP released in 2013 by Flume &amp; Chet Faker?",
+            "correct_answer": "Left Alone",
+            "incorrect_answers": [
+                "What About Us",
+                "This Song Is Not About A Girl",
+                "Drop The Game"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "What is Gabe Newell's favorite class in Team Fortress 2?",
+            "correct_answer": "Spy",
+            "incorrect_answers": [
+                "Heavy",
+                "Medic",
+                "Pyro"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Who is the founder of Team Fortress 2's fictional company 'Mann Co'?",
+            "correct_answer": "Zepheniah Mann",
+            "incorrect_answers": [
+                "Cave Johnson",
+                "Wallace Breem",
+                "Saxton Hale"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "boolean",
+            "difficulty": "easy",
+            "question": "Minecraft can be played with a virtual reality headset.",
+            "correct_answer": "True",
+            "incorrect_answers": [
+                "False"
+            ]
+        },
+        {
+            "category": "Entertainment: Cartoon & Animations",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "In the web-comic Homestuck, what is the name of the game the 4 kids play?",
+            "correct_answer": "Sburb",
+            "incorrect_answers": [
+                "Homesick",
+                "Husslie",
+                "Hiveswap"
+            ]
+        },
+        {
+            "category": "Science & Nature",
+            "type": "boolean",
+            "difficulty": "medium",
+            "question": "Centripedal force is an apparent force that acts outward on a body moving around a center, arising from the body's inertia.",
+            "correct_answer": "False",
+            "incorrect_answers": [
+                "True"
+            ]
+        },
+        {
+            "category": "Entertainment: Japanese Anime & Manga",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Which song was the callsign for Stefan Verdemann's KWFM radio station in Urasawa Naoki's 'Monster'?",
+            "correct_answer": "Over the Rainbow",
+            "incorrect_answers": [
+                "What a Wonderful World",
+                "When You Wish Upon A Star",
+                "Singing In The Rain"
+            ]
+        },
+        {
+            "category": "Entertainment: Comics",
+            "type": "boolean",
+            "difficulty": "easy",
+            "question": "The 'Pepe' meme originated from a comic drawn by Matt Furie called 'Boy's Club'?",
+            "correct_answer": "True",
+            "incorrect_answers": [
+                "False"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Who in Pulp Fiction says 'No, they got the metric system there, they wouldn't know what the fuck a Quarter Pounder is.'",
+            "correct_answer": "Vincent Vega",
+            "incorrect_answers": [
+                "Jules Winnfield",
+                "Jimmie Dimmick",
+                "Butch Coolidge"
+            ]
+        },
+        {
+            "category": "Animals",
+            "type": "boolean",
+            "difficulty": "medium",
+            "question": "The Platypus is a mammal.",
+            "correct_answer": "True",
+            "incorrect_answers": [
+                "False"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "boolean",
+            "difficulty": "hard",
+            "question": "The song 'Mystery Train' was released by artist 'Little Junior's Blue Flames' in 1953.",
+            "correct_answer": "True",
+            "incorrect_answers": [
+                "False"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Which franchise had a special event hosted in the popular MMORPG Final Fantasy XIV: A Realm Reborn?",
+            "correct_answer": "Yo-kai Watch",
+            "incorrect_answers": [
+                "Pok&eacute;mon",
+                "Yu-gi-oh",
+                "Buddyfight"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "What is the real name of the famous spanish humorist, El Risitas?",
+            "correct_answer": "Juan Joya Borga",
+            "incorrect_answers": [
+                "Gabriel Garcia Marquez",
+                "Jesus Quintero",
+                "Ernesto Guevara"
+            ]
+        },
+        {
+            "category": "Entertainment: Musicals & Theatres",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "In Macbeth, the eyes of what animals were used in the Witches' cauldron?",
+            "correct_answer": "Newts",
+            "incorrect_answers": [
+                "Humans",
+                "Sharks",
+                "Squids"
+            ]
+        },
+        {
+            "category": "Animals",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Unlike on most salamanders, this part of a newt is flat?",
+            "correct_answer": "Tail",
+            "incorrect_answers": [
+                "Head",
+                "Teeth",
+                "Feet"
+            ]
+        },
+        {
+            "category": "Geography",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "What is the name of the formerly rich fishing grounds off the island of Newfoundland, Canada?",
+            "correct_answer": "Grand Banks",
+            "incorrect_answers": [
+                "Great Barrier Reef",
+                "Mariana Trench",
+                "Hudson Bay"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Who was featured in the song 'Words' by Feint? ",
+            "correct_answer": "Laura Brehm",
+            "incorrect_answers": [
+                "Anna Yvette ",
+                "Danyka Nadeau",
+                "Veela"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "boolean",
+            "difficulty": "easy",
+            "question": "In 'Undertale', the main character of the game is Sans.",
+            "correct_answer": "False",
+            "incorrect_answers": [
+                "True"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "boolean",
+            "difficulty": "medium",
+            "question": "In Monster Hunter Generations, guild style is a type of hunting style.",
+            "correct_answer": "True",
+            "incorrect_answers": [
+                "False"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What was Mountain Dew's original slogan?",
+            "correct_answer": "Yahoo! Mountain Dew... It'll tickle your innards!",
+            "incorrect_answers": [
+                "Give Me A Dew",
+                "Do The Dew",
+                "Get' that barefoot feelin' drinkin' Mountain Dew"
+            ]
+        },
+        {
+            "category": "Vehicles",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "The LS7 engine is how many cubic inches?",
+            "correct_answer": "427",
+            "incorrect_answers": [
+                "346",
+                "364",
+                "376"
+            ]
+        },
+        {
+            "category": "Science & Nature",
+            "type": "boolean",
+            "difficulty": "medium",
+            "question": "Sugar contains fat.",
+            "correct_answer": "False",
+            "incorrect_answers": [
+                "True"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "boolean",
+            "difficulty": "hard",
+            "question": "The weapon Clint Eastwood uses in 'Dirty Harry' was a .44 Automag.",
+            "correct_answer": "False",
+            "incorrect_answers": [
+                "True"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What is rapper Drake's real name?",
+            "correct_answer": "Aubrey Graham",
+            "incorrect_answers": [
+                "Shaun Carter",
+                "Dwayne Carter",
+                "Andre Young"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "What is the name of the game developer who created 'Call Of Duty: Zombies'?",
+            "correct_answer": "Treyarch",
+            "incorrect_answers": [
+                "Sledgehammer Games",
+                "Infinity Ward",
+                "Naughty Dog"
+            ]
+        },
+        {
+            "category": "Geography",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "What is the capital of Mauritius?",
+            "correct_answer": "Port Louis",
+            "incorrect_answers": [
+                "Port Moresby",
+                "Port Vila",
+                "Port-au-Prince"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Which programming language shares its name with an island in Indonesia?",
+            "correct_answer": "Java",
+            "incorrect_answers": [
+                "Python",
+                "C",
+                "Jakarta"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "'Exile' and 'Revelations' were the third and fourth installments of which PC game series?",
+            "correct_answer": "Myst",
+            "incorrect_answers": [
+                "Shivers",
+                "Doom",
+                "Tropico"
+            ]
+        },
+        {
+            "category": "Entertainment: Comics",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Which of the following rings from the DC Comics' 'Lantern Corps' are classified as Parasitic?",
+            "correct_answer": "Indigo (Compassion)",
+            "incorrect_answers": [
+                "Green (Willpower)",
+                "White (Life)",
+                "Yellow (Fear)"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Which of these words means 'idle spectator'?",
+            "correct_answer": "Gongoozler",
+            "incorrect_answers": [
+                "Gossypiboma",
+                "Jentacular",
+                "Meupareunia"
+            ]
+        },
+        {
+            "category": "Geography",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Which country was NOT part of the Soviet Union?",
+            "correct_answer": "Romania",
+            "incorrect_answers": [
+                "Turkmenistan",
+                "Belarus",
+                "Tajikistan"
+            ]
+        },
+        {
+            "category": "Entertainment: Books",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Which is NOT a book in the Harry Potter Series?",
+            "correct_answer": "The House Elf",
+            "incorrect_answers": [
+                "The Chamber of Secrets",
+                "The Prisoner of Azkaban",
+                "The Deathly Hallows"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What song on ScHoolboy Q's album Black Face LP featured Kanye West?",
+            "correct_answer": "THat Part",
+            "incorrect_answers": [
+                "Neva CHange",
+                "Big Body",
+                "Blank Face"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In Touhou 12: Undefined Fantastic Object, which of these was not a playable character?",
+            "correct_answer": "Izayoi Sakuya",
+            "incorrect_answers": [
+                "Hakurei Reimu",
+                "Kirisame Marisa",
+                "Kochiya Sanae"
+            ]
+        },
+        {
+            "category": "Science & Nature",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Deionized water is water with which of the following removed?",
+            "correct_answer": "Iron",
+            "incorrect_answers": [
+                "Oxygen",
+                "Hydrogen",
+                "Uncharged atoms"
+            ]
+        },
+        {
+            "category": "History",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Who was the last Roman emperor in the Year of Four Emperors (69 AD)?",
+            "correct_answer": "Vespasian",
+            "incorrect_answers": [
+                "Vitellius",
+                "Otho",
+                "Galba"
+            ]
+        },
+        {
+            "category": "Science & Nature",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "What is the most potent toxin known?",
+            "correct_answer": "Botulinum toxin",
+            "incorrect_answers": [
+                "Ricin",
+                "Cyanide",
+                "Asbestos"
+            ]
+        }
+    ]
+}

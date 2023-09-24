@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/interfaces/usuarios.interface';
 import { AuthService } from 'src/app/services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -15,24 +16,29 @@ export class LoginComponent {
     email: '',
     clave: ''
   };
-  
 
-  login():void{
-    let {email, clave} = this.usuario;
-    this.authService.login(email, clave).then(res=> {
-      this.router.navigateByUrl('app');
-      console.log("Se logeo", res);
+
+  login(): void {
+    let { email, clave } = this.usuario;
+    this.authService.login(email, clave).then(res => {
       if (res != null) {
+        this.router.navigateByUrl('app');
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Usuario/contraseña incorrectos',
+          footer: 'Vuelva a intentarlo'
+        })
       }
     })
   }
 
-  registrar():void{
-    console.log("hola");
+  registrar(): void {
     this.router.navigateByUrl("/register");
   }
 
-  autolog(){
+  autolog() {
     this.usuario.email = "test@gmail.com";
     this.usuario.clave = "123123";
     // this.authService.login("test@gmail.com", "123123").then(res=> {
@@ -42,5 +48,5 @@ export class LoginComponent {
     //   }
     // });
   }
-  
+
 }

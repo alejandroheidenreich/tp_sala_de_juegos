@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { PreguntadosRoutingModule } from './preguntados-routing.module';
 import { PreguntadosComponent } from './preguntados.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [PreguntadosComponent],
   imports: [
     CommonModule,
-    PreguntadosRoutingModule
+    PreguntadosRoutingModule,
+    FormsModule
   ]
 })
 export class PreguntadosModule { }

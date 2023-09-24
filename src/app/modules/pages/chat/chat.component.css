@@ -14,7 +14,7 @@
 
 .card-body{
     padding: 0.5rem;
-    background-image: url("../../../assets/logo.png");
+    /* background-image: url("assets/logo.png"); */
     background-repeat: no-repeat;
     background-position: center;
 }

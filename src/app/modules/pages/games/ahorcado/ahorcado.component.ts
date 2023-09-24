@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-ahorcado',
@@ -43,14 +44,14 @@ export class AhorcadoComponent {
     "inmarcesible",
     "aurora",
     "desenlace"
-    
-]; 
-  public botonesClickeados: { [letra: string]: boolean } = {}; 
+
+  ];
+  public botonesClickeados: { [letra: string]: boolean } = {};
   public palabra: string = this.palabrasJuego[Math.floor(Math.random() * this.palabrasJuego.length)];
-  public palabraOculta: string  = "";
+  public palabraOculta: string = "";
   public intentos: number = 0;
   public partida: boolean | undefined = undefined;
-  public letras:string[] = [
+  public letras: string[] = [
     "a",
     "b",
     "c",
@@ -84,10 +85,10 @@ export class AhorcadoComponent {
     console.log(this.palabra);
   }
 
-  comprobar(letra:string) {
+  comprobar(letra: string) {
     if (!this.botonesClickeados[letra]) {
       this.existeLetra(letra);
-      
+
       const palabraOcultaArreglo = this.palabraOculta.split(" ");
       for (let i = 0; i <= this.palabra.length; i++) {
         if (this.palabra[i] === letra) {
@@ -106,19 +107,48 @@ export class AhorcadoComponent {
 
     if (palabraEvaluar === this.palabra) {
       this.partida = true;
+      Swal.fire({
+        title: 'Ganaste',
+        // width: 600,
+        // padding: '3em',
+        color: '#000000',
+        confirmButtonColor: '#0f0',
+        confirmButtonText: 'Continue',
+        background: '#fff',
+        backdrop: `
+          rgba(133, 216, 118,0.4)
+          left top
+          no-repeat
+        `
+      })
     }
     else if (this.intentos === 9) {
-        this.partida = false;
+      this.partida = false;
+      Swal.fire({
+        title: 'Perdiste',
+        confirmButtonColor: '#E33939',
+        width: 600,
+        padding: '3em',
+        color: '#000000',
+        confirmButtonText: 'Retry',
+        text: 'La palabra era: ' + this.palabra,
+        background: '#fff',
+        backdrop: `
+        rgba(216, 118, 118,0.4)
+        left top
+        no-repeat
+      `
+      })
     }
   }
 
-  existeLetra(letra:string) {
+  existeLetra(letra: string) {
     if (this.palabra.indexOf(letra) == -1) {
-       this.intentos++;
-    } 
+      this.intentos++;
+    }
   }
 
-  reiniciar(){
+  reiniciar() {
     window.location.reload();
   }
 

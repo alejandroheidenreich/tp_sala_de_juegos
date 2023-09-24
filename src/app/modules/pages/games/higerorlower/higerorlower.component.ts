@@ -71,18 +71,18 @@ export class HigerorlowerComponent {
   public seleccion: boolean = false;
   public puntos: number = 0;
   public isCollapsed = false;
-  constructor(){
+  constructor() {
     this.nuevaCarta();
   }
 
-  jugar(select: boolean){
+  jugar(select: boolean) {
     this.seleccion = select;
     this.cartaAnterior = this.cartaActual;
     let indexAnterior = this.cartas.indexOf(this.cartaAnterior);
     this.nuevaCarta();
     let indexNueva = this.cartas.indexOf(this.cartaActual);
-    
-    if ((this.seleccion && indexNueva > indexAnterior || !this.seleccion && indexNueva < indexAnterior) && this.cartas[indexAnterior][13] !=  this.cartas[indexNueva][13]){
+
+    if ((this.seleccion && indexNueva > indexAnterior || !this.seleccion && indexNueva < indexAnterior) && this.cartas[indexAnterior][13] != this.cartas[indexNueva][13]) {
       //gano
       // Swal.fire('Ganaste');
       Swal.fire({
@@ -92,16 +92,15 @@ export class HigerorlowerComponent {
         color: '#000000',
         confirmButtonColor: '#0f0',
         confirmButtonText: 'Continue',
-        background: '#fff url(/images/trees.png)',
+        background: '#fff',
         backdrop: `
           rgba(133, 216, 118,0.4)
-          url("/images/nyan-cat.gif")
           left top
           no-repeat
         `
       })
       this.puntos++;
-    } else { 
+    } else {
       //perdio
       Swal.fire({
         title: 'Perdiste',
@@ -110,10 +109,9 @@ export class HigerorlowerComponent {
         // padding: '3em',
         color: '#000000',
         confirmButtonText: 'Retry',
-        background: '#fff url(/images/trees.png)',
+        background: '#fff',
         backdrop: `
         rgba(216, 118, 118,0.4)
-        url("/images/nyan-cat.gif")
         left top
         no-repeat
       `
@@ -121,8 +119,8 @@ export class HigerorlowerComponent {
     }
   }
 
- 
-  nuevaCarta(){
+
+  nuevaCarta() {
     this.cartaActual = this.cartas[Math.floor(Math.random() * this.cartas.length)];
   }
 }
