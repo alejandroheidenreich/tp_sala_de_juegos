@@ -7,7 +7,7 @@
     <div id="contendedorMensajes" class="card-body contendedorMensajes h-100">
         <p *ngFor="let mensaje of mensajes" class="msj p-2"
             [ngClass]="(usuarioLogeado.email == mensaje.emisor)? 'enviado':'recibido'">
-            <span>{{mensaje.emisor}}</span>
+            <span>{{mensaje.emisor}} - {{mensaje.fecha}}</span>
             {{mensaje.texto}}
 
         </p>

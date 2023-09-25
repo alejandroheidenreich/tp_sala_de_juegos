@@ -47,20 +47,6 @@ export class AuthService {
     this.afauth.signOut();
   }
 
-  obtenerUsuario(uid: string) {
-    return this.afauth.authState
-      .pipe(
-        map((user) => {
-          console.log(user);
-
-          if (user != null && user.uid === uid) {
-            return user.email!.toString();
-          } else {
-            return null;
-          }
-        })
-      );
-  }
 
 
 }

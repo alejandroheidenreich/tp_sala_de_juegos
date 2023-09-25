@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { Mensaje } from 'src/app/interfaces/mensaje.interface';
 import { AuthService } from 'src/app/services/auth.service';
 import { DataService } from 'src/app/services/data.service';
-import firebase from "firebase/compat/app"
-
 
 @Component({
   selector: 'app-chat',
@@ -16,12 +14,12 @@ export class ChatComponent {
   public nuevoMensaje: Mensaje = {
     emisor: '',
     texto: '',
+    fecha: '',
   };
   public mensajes: Mensaje[] = [];
 
-
-
   ngOnInit() {
+
     this.dataService.obtenerChat().subscribe(data => {
       console.log(data);
       this.mensajes = Object.values(data)
@@ -40,7 +38,9 @@ export class ChatComponent {
       let mensaje = {
         emisor: this.usuarioLogeado.email,
         texto: this.nuevoMensaje.texto,
+        fecha: new Date().toTimeString() + " - " + new Date().toDateString()
       };
+      console.log(mensaje);
 
       this.mensajes.push(mensaje);
       this.dataService.actualizarChat(mensaje);
