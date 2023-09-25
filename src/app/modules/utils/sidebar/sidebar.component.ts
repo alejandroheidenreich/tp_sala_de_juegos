@@ -12,12 +12,12 @@ export class SidebarComponent {
   constructor(private router: Router, private authService: AuthService) { }
   @Output() salida = new EventEmitter<string>();
 
-  elegir(selector:string): void {
+  elegir(selector: string): void {
     this.salida.emit(selector);
   }
 
-  logout():void{
-      this.authService.logout();
-      this.router.navigateByUrl('login');
+  logout(): void {
+    this.authService.logout();
+    this.router.navigateByUrl('login');
   }
 }

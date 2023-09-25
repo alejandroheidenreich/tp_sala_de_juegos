@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import firebase from "firebase/compat/app"
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class AuthService {
   async login(email: string, password: string) {
     try {
       console.log("Se logeo", email);
-      
+
       return await this.afauth.signInWithEmailAndPassword(email, password);
     } catch (error) {
       console.log("Error signing in", error);
@@ -38,16 +39,28 @@ export class AuthService {
     }
   }
 
-  getUserLogged(){
+  getUserLogged() {
     return this.afauth.authState;
   }
 
-  logout(){
+  logout() {
     this.afauth.signOut();
   }
 
-  actualizarChat(msj: any){
-    firebase.database().ref('chat').push(msj);
-    
+  obtenerUsuario(uid: string) {
+    return this.afauth.authState
+      .pipe(
+        map((user) => {
+          console.log(user);
+
+          if (user != null && user.uid === uid) {
+            return user.email!.toString();
+          } else {
+            return null;
+          }
+        })
+      );
   }
+
+
 }

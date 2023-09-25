@@ -1,23 +1,25 @@
-<div class="card text-center text-light bg-dark cardContainer" *ngIf="usuarioLogeado">
-    
+<div class="card text-center mt-4 text-light bg-dark cardContainer" *ngIf="usuarioLogeado">
+
     <div class="card-header">
         CHAT
     </div>
 
     <div id="contendedorMensajes" class="card-body contendedorMensajes h-100">
-            <p *ngFor="let mensaje of mensajes" class="msj p-2"
-            [ngClass]="(usuarioLogeado.uid == mensaje.emisor)? 'enviado':'recibido'">
-                <span>{{usuarioLogeado.email+"(arreglar)"}}</span>
-                {{mensaje.texto}}
-                
-            </p>
+        <p *ngFor="let mensaje of mensajes" class="msj p-2"
+            [ngClass]="(usuarioLogeado.email == mensaje.emisor)? 'enviado':'recibido'">
+            <span>{{mensaje.emisor}}</span>
+            {{mensaje.texto}}
+
+        </p>
     </div>
 
     <form class="card-footer text-muted input-group" (ngSubmit)="enviarMensaje()">
-        <input type="text" class="form-control" placeholder="Ingrese su mensaje" [(ngModel)] = "nuevoMensaje" [ngModelOptions]="{standalone: true}">
+        <input type="text" class="form-control" placeholder="Ingrese su mensaje" [(ngModel)]="nuevoMensaje.texto"
+            [ngModelOptions]="{standalone: true}">
         <div class="input-group-append" (click)="enviarMensaje()">
             <span class="input-group-text m-2" id="basic-addon2">
-            <img class="imgEnviar" width="24" height="24" src="https://img.icons8.com/material-rounded/24/sent.png" alt="sent"/>
+                <img class="imgEnviar" width="24" height="24" src="https://img.icons8.com/material-rounded/24/sent.png"
+                    alt="sent" />
             </span>
         </div>
     </form>

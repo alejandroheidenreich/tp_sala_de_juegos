@@ -67,10 +67,12 @@ export class HigerorlowerComponent {
   @Output()
   public cartaActual: string = "";
   public cartaAnterior: string = "";
+  public inicio: string = "assets/cards/red_joker.svg";
 
   public seleccion: boolean = false;
   public puntos: number = 0;
   public isCollapsed = false;
+
   constructor() {
     this.nuevaCarta();
   }
@@ -82,31 +84,13 @@ export class HigerorlowerComponent {
     this.nuevaCarta();
     let indexNueva = this.cartas.indexOf(this.cartaActual);
 
-    if ((this.seleccion && indexNueva > indexAnterior || !this.seleccion && indexNueva < indexAnterior) && this.cartas[indexAnterior][13] != this.cartas[indexNueva][13]) {
-      //gano
-      // Swal.fire('Ganaste');
-      Swal.fire({
-        title: 'Ganaste',
-        // width: 600,
-        // padding: '3em',
-        color: '#000000',
-        confirmButtonColor: '#0f0',
-        confirmButtonText: 'Continue',
-        background: '#fff',
-        backdrop: `
-          rgba(133, 216, 118,0.4)
-          left top
-          no-repeat
-        `
-      })
+    if ((this.seleccion && indexNueva > indexAnterior || !this.seleccion && indexNueva < indexAnterior) || this.cartas[indexAnterior][13] == this.cartas[indexNueva][13]) {
       this.puntos++;
     } else {
-      //perdio
       Swal.fire({
         title: 'Perdiste',
+        text: `Llegaste a ${this.puntos} puntos`,
         confirmButtonColor: '#E33939',
-        // width: 600,
-        // padding: '3em',
         color: '#000000',
         confirmButtonText: 'Retry',
         background: '#fff',
@@ -115,10 +99,13 @@ export class HigerorlowerComponent {
         left top
         no-repeat
       `
-      })
+      }).then(() => {
+        this.puntos = 0;
+        this.nuevaCarta();
+        this.cartaAnterior = "";
+      });
     }
   }
-
 
   nuevaCarta() {
     this.cartaActual = this.cartas[Math.floor(Math.random() * this.cartas.length)];
