@@ -37,7 +37,13 @@ export class RegisterComponent {
             title: 'Usuario creado con exito',
             showConfirmButton: false,
             timer: 1500
-          }).then(() => { this.router.navigateByUrl("/login"); })
+          }).then(() => {
+            this.authService.login(this.usuario.email, this.usuario.clave).then(res => {
+              if (res != null) {
+                this.router.navigateByUrl('app');
+              }
+            })
+          })
         }
       })
     }
