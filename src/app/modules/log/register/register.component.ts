@@ -32,7 +32,6 @@ export class RegisterComponent {
           })
         } else {
           Swal.fire({
-            // position: 'bottom-end',
             icon: 'success',
             title: 'Usuario creado con exito',
             showConfirmButton: false,

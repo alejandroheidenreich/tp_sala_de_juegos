@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import trivia from 'src/assets/trivia.json';
 import Swal from 'sweetalert2';
 
@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
   templateUrl: './preguntados.component.html',
   styleUrls: ['./preguntados.component.css']
 })
-export class PreguntadosComponent implements OnInit {
+export class PreguntadosComponent implements OnInit, OnDestroy {
   public contadorCorrectas: number = 0;
   public pregunta: string = '';
   public categoria: string = '';
@@ -17,14 +17,21 @@ export class PreguntadosComponent implements OnInit {
   public opciones: string[] = [];
   public preguntasArray: any[] = [];
   public segundos: number = 0;
+  public interval!: any;
 
-  constructor() {
-    setInterval(() => this.tick(), 1000);
-  }
+  constructor() { }
 
   ngOnInit(): void {
+    // declarar interval destroy -- clear
+    this.interval = setInterval(() => this.tick(), 1000);
     this.preguntasArray = trivia.preguntas;
     this.iniciar();
+  }
+
+  ngOnDestroy(): void {
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
   }
 
   iniciar() {
