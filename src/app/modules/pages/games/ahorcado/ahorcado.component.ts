@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
   templateUrl: './ahorcado.component.html',
   styleUrls: ['./ahorcado.component.css']
 })
-export class AhorcadoComponent {
+export class AhorcadoComponent implements OnInit {
   title = "Ahorcado";
   public palabrasJuego: string[] = [
     "superfluo",
@@ -80,7 +80,9 @@ export class AhorcadoComponent {
     "z"
   ];
 
-  constructor() {
+  constructor() { }
+
+  ngOnInit(): void {
     this.palabraOculta = "_ ".repeat(this.palabra.length);
     console.log(this.palabra);
   }

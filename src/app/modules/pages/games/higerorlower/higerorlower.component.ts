@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 import Swal from 'sweetalert2';
@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./higerorlower.component.css'],
 
 })
-export class HigerorlowerComponent {
+export class HigerorlowerComponent implements OnInit {
   public cartas: string[] = [
     "assets/cards/2_of_clubs.svg",
     "assets/cards/2_of_diamonds.svg",
@@ -73,7 +73,9 @@ export class HigerorlowerComponent {
   public puntos: number = 0;
   public isCollapsed = false;
 
-  constructor() {
+  constructor() { }
+
+  ngOnInit(): void {
     this.nuevaCarta();
   }
 

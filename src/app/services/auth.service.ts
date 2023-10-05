@@ -12,8 +12,6 @@ export class AuthService {
 
   async login(email: string, password: string) {
     try {
-      console.log("Se logeo", email);
-
       return await this.afauth.signInWithEmailAndPassword(email, password);
     } catch (error) {
       console.log("Error signing in", error);
@@ -30,20 +28,12 @@ export class AuthService {
     }
   }
 
-  async loginWithGoogle() {
-    try {
-      return await this.afauth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    } catch (error) {
-      console.log("Error signing in with google", error);
-      return null;
-    }
-  }
-
   getUserLogged() {
     return this.afauth.authState;
   }
 
   logout() {
+    localStorage.removeItem('token');
     this.afauth.signOut();
   }
 

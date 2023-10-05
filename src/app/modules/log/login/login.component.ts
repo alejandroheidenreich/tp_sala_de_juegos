@@ -22,6 +22,7 @@ export class LoginComponent {
     let { email, clave } = this.usuario;
     this.authService.login(email, clave).then(res => {
       if (res != null) {
+        localStorage.setItem('token', res.user!.uid);
         this.router.navigateByUrl('app');
       } else {
         Swal.fire({
@@ -41,12 +42,6 @@ export class LoginComponent {
   autolog() {
     this.usuario.email = "test@gmail.com";
     this.usuario.clave = "123123";
-    // this.authService.login("test@gmail.com", "123123").then(res=> {
-    //   console.log("Se logeo", res);
-    //   if (res != null) {
-    //     this.router.navigateByUrl("/home");
-    //   }
-    // });
   }
 
 }

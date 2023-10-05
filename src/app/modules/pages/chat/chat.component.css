@@ -1,10 +1,10 @@
 .cardContainer{
-    width: 1500px;
-    height: 900px;
-    position:fixed;
+    width: 90rem;
+    height: 50rem;
+    /* position:fixed; */
     top: 0.5rem;
     bottom: 0.5rem;
-    left: 15.5rem;
+    /* left: 15.5rem; */
 }
 
 .card-header{

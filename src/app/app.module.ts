@@ -7,7 +7,10 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/env/env';
-import { DataService } from './services/data.service';
+import { ChatService } from './services/chat.service';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+
 
 @NgModule({
   declarations: [
@@ -19,9 +22,11 @@ import { DataService } from './services/data.service';
     FormsModule,
     NgbModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideFirestore(() => getFirestore()),
     HttpClientModule
   ],
-  providers: [DataService],
+  providers: [ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,65 +1,74 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Mensaje } from 'src/app/interfaces/mensaje.interface';
 import { AuthService } from 'src/app/services/auth.service';
-import { DataService } from 'src/app/services/data.service';
+import { ChatService } from 'src/app/services/chat.service';
+
 
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.css']
+  styleUrls: ['./chat.component.css'],
+  providers: [ChatService]
 })
-export class ChatComponent {
-  constructor(private dataService: DataService, private authService: AuthService) { }
+export class ChatComponent implements OnInit, OnDestroy {
+  constructor(private chatService: ChatService, private authService: AuthService) { }
+
   usuarioLogeado: any;
   public nuevoMensaje: Mensaje = {
     emisor: '',
-    texto: '',
     fecha: '',
+    texto: '',
   };
   public mensajes: Mensaje[] = [];
+  public sub!: any;
 
   ngOnInit() {
-
-    this.dataService.obtenerChat().subscribe(data => {
-      console.log(data);
-      this.mensajes = Object.values(data)
-    });
-    this.authService.getUserLogged().subscribe((user: any) => {
+    this.authService.getUserLogged().subscribe(user => {
       this.usuarioLogeado = user;
     });
+    this.sub = this.chatService.obtenerChat(this.mensajes);
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 
 
-  enviarMensaje() {
+  async enviarMensaje() {
     if (this.nuevoMensaje.texto != '') {
-      console.log(this.usuarioLogeado);
       this.nuevoMensaje.emisor = this.usuarioLogeado.email;
-
       let mensaje = {
         emisor: this.usuarioLogeado.email,
         texto: this.nuevoMensaje.texto,
         fecha: new Date().toTimeString() + " - " + new Date().toDateString()
       };
-      console.log(mensaje);
-
-      this.mensajes.push(mensaje);
-      this.dataService.actualizarChat(mensaje);
-      this.nuevoMensaje.texto = '';
-      setTimeout(() => {
-        this.scrollToTheLastElementByClassName();
-      }, 30);
+      try {
+        await this.chatService.agregarChat(mensaje).then((chat) => {
+          this.nuevoMensaje.texto = '';
+          setTimeout(() => {
+            this.scrollToTheLastElementByClassName();
+          }, 30);
+        });
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 
   scrollToTheLastElementByClassName() {
+
     let element = document.getElementsByClassName('msj');
-    let lastElement: any = element[element.length - 1];
-    let toppos = lastElement.offsetTop;
+    if (element.length > 0) {
 
-    const contMsg = document.getElementById('contendedorMensajes');
-    console.log(contMsg!.scrollTop);
+      let lastElement: any = element[element.length - 1];
+      let toppos = lastElement.offsetTop;
 
-    contMsg!.scrollTop = toppos;
+      const contMsg = document.getElementById('contendedorMensajes');
+      console.log(contMsg!.scrollTop);
+
+      contMsg!.scrollTop = toppos;
+    }
   }
 
 }
