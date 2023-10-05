@@ -6,7 +6,7 @@ import { checkLoginGuard } from 'src/app/guards/check-login.guard';
 const routes: Routes = [
   {
     path: '', component: PagesComponent,
-    canActivateChild: [checkLoginGuard],
+    //canActivateChild: [checkLoginGuard],
     children: [
       {
         path: '', loadChildren: () => import('./home/home.module')
