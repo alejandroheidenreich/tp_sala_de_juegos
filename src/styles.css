@@ -10,3 +10,11 @@ html,body{
     width: 100vw;
     height: 100vh;
 }
+
+:root{
+    --black: #212121;
+    --green: #29bf12;
+    --blue: #08bdbd;
+    --red: #f21b3f;
+    --yellow: #ff9915;
+}

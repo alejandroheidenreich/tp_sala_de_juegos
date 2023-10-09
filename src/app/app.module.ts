@@ -10,6 +10,7 @@ import { environment } from 'src/env/env';
 import { ChatService } from './services/chat.service';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { SimonsaysService } from './services/simonsays.service';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
     provideFirestore(() => getFirestore()),
     HttpClientModule
   ],
-  providers: [ChatService],
+  providers: [ChatService, SimonsaysService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

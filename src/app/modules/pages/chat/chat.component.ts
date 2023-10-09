@@ -31,7 +31,8 @@ export class ChatComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // this.sub.unsubscribe();
+    //this.chatService.subChat.unsubscribe();
+    // this.sub.unsubscribe(); no anda
   }
 
 

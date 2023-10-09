@@ -19,8 +19,8 @@ const routes: Routes = [
       .then(mod => mod.PreguntadosModule)
   },
   {
-    path: 'pong', loadChildren: () => import('./pong/pong.module')
-      .then(mod => mod.PongModule)
+    path: 'simon', loadChildren: () => import('./simonsays/simonsays.module')
+      .then(mod => mod.SimonsaysModule)
   },
 ];
 

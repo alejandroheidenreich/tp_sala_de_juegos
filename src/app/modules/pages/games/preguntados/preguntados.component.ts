@@ -22,7 +22,6 @@ export class PreguntadosComponent implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit(): void {
-    // declarar interval destroy -- clear
     this.interval = setInterval(() => this.tick(), 1000);
     this.preguntasArray = trivia.preguntas;
     this.iniciar();
@@ -73,8 +72,6 @@ export class PreguntadosComponent implements OnInit, OnDestroy {
     this.estado = true;
     this.segundos = 30;
     this.elegirAleatoria();
-
-
   }
 
   comprobar(opcion: string): void {

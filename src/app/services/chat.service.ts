@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 export class ChatService {
 
   constructor(private firestore: Firestore) { }
+  public subChat!: any;
 
   agregarChat(nuevosMensaje: Mensaje): Promise<any> {
     const col = collection(this.firestore, 'chat');
@@ -92,6 +93,7 @@ export class ChatService {
       });
     });
 
+    this.subChat = unsubscribe;
     return unsubscribe;
   }
 

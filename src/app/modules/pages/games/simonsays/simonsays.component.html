@@ -1,0 +1,21 @@
+<div class="container text-light text-center mt-5">
+    <h1>SIMON SAYS</h1>
+    <div class="game">
+
+        <div class="flex center">
+            <app-button [active]="colors.red" color="red" (intento)="intentoPlayer($event)"></app-button>
+        </div>
+        <div class="flex middle">
+            <app-button [active]="colors.blue" color="blue" (intento)="intentoPlayer($event)"></app-button>
+            <p style="font-size: 2rem;">{{count}}</p>
+            <app-button [active]="colors.green" color="green" (intento)="intentoPlayer($event)"></app-button>
+        </div>
+        <div class="flex center">
+            <app-button [active]="colors.yellow" color="yellow" (intento)="intentoPlayer($event)"></app-button>
+        </div>
+        <div></div>
+    </div>
+
+
+
+</div>
