@@ -39,6 +39,11 @@ export class SimonsaysService {
     return this.generarSimonsays();
   }
 
+  endSimon() {
+    this.count = START_COUNT;
+    this.simon = [];
+  }
+
   intentoPlayer(intento: string) {
     this.player.push(intento);
     if (!this.compararSimonsays()) {

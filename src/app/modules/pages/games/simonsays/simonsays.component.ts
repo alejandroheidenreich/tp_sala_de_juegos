@@ -33,6 +33,7 @@ export class SimonsaysComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.simonsaysService.endSimon();
     // sleep.uns
   }
   intentoPlayer(e: string) {
