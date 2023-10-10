@@ -1,4 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Pregunta } from 'src/app/interfaces/pregunta.inteface';
+import { DataService } from 'src/app/services/data.service';
 import trivia from 'src/assets/trivia.json';
 import Swal from 'sweetalert2';
 
@@ -9,21 +11,18 @@ import Swal from 'sweetalert2';
 })
 export class PreguntadosComponent implements OnInit, OnDestroy {
   public contadorCorrectas: number = 0;
-  public pregunta: string = '';
-  public categoria: string = '';
-  public dificultad: string = '';
-  public correcta: string = '';
   public estado: boolean | undefined;
-  public opciones: string[] = [];
-  public preguntasArray: any[] = [];
   public segundos: number = 0;
   public interval!: any;
+  public opciones: string[] = [];
+  public categoria: string | undefined;
+  public pregunta: string | undefined;
+  public preguntaElegida!: Pregunta;
 
-  constructor() { }
+  constructor(private data: DataService) { }
 
   ngOnInit(): void {
     this.interval = setInterval(() => this.tick(), 1000);
-    this.preguntasArray = trivia.preguntas;
     this.iniciar();
   }
 
@@ -54,7 +53,7 @@ export class PreguntadosComponent implements OnInit, OnDestroy {
   reinciarSegundos(): void {
     Swal.fire({
       title: 'Perdiste, se termino el tiempo',
-      text: 'La respuesta correta era: ' + this.correcta,
+      text: 'La respuesta correta era: ' + this.preguntaElegida.results[0].correct_answer,
       confirmButtonColor: '#E33939',
       color: '#000000',
       confirmButtonText: 'Retry',
@@ -76,7 +75,7 @@ export class PreguntadosComponent implements OnInit, OnDestroy {
 
   comprobar(opcion: string): void {
     this.estado = false;
-    if (opcion == this.correcta) {
+    if (opcion == this.preguntaElegida.results[0].correct_answer) {
       this.contadorCorrectas++;
       if (this.contadorCorrectas == 50) {
         Swal.fire({
@@ -99,7 +98,7 @@ export class PreguntadosComponent implements OnInit, OnDestroy {
       this.contadorCorrectas = 0;
       Swal.fire({
         title: 'Perdiste',
-        text: 'La respuesta correcta era: ' + this.correcta,
+        text: 'La respuesta correcta era: ' + this.preguntaElegida.results[0].correct_answer,
         confirmButtonColor: '#E33939',
         color: '#000000',
         confirmButtonText: 'Retry',
@@ -115,30 +114,21 @@ export class PreguntadosComponent implements OnInit, OnDestroy {
 
 
   elegirAleatoria() {
-
-    let index = Math.floor(Math.random() * this.preguntasArray.length);
-    let elegida = this.preguntasArray[index];
-
-    this.categoria = elegida["category"];
-    this.dificultad = elegida["difficulty"];
-    this.pregunta = elegida["question"];
-    this.opciones = elegida["incorrect_answers"];
-    this.correcta = elegida["correct_answer"];
-    if (!this.opciones.includes(this.correcta)) {
-      this.opciones.push(elegida["correct_answer"])
-    }
-    this.shuffleArray(this.opciones);
-    console.log(this.correcta);
-    this.preguntasArray.splice(index, 1);
+    this.data.obtenerPregunta().subscribe(pregunta => {
+      this.preguntaElegida = pregunta;
+      console.log(pregunta);
+      this.categoria = this.preguntaElegida.results[0].category;
+      this.pregunta = this.preguntaElegida.results[0].question;
+      this.opciones = this.preguntaElegida.results[0].incorrect_answers;
+      this.opciones.push(this.preguntaElegida.results[0].correct_answer)
+      this.shuffleArray(this.opciones);
+      console.log(this.preguntaElegida.results[0].correct_answer);
+    });
   }
-
 
   shuffleArray(array: any) {
-    array.sort(this.compareRandom);
+    array.sort(() => { return Math.random() - 0.5; });
   }
 
-  compareRandom() {
-    return Math.random() - 0.5;
-  }
 
 }
