@@ -18,6 +18,7 @@ export class PreguntadosComponent implements OnInit, OnDestroy {
   public categoria: string | undefined;
   public pregunta: string | undefined;
   public preguntaElegida!: Pregunta;
+  public img: string | undefined;
 
   constructor(private data: DataService) { }
 
@@ -118,11 +119,20 @@ export class PreguntadosComponent implements OnInit, OnDestroy {
       this.preguntaElegida = pregunta;
       console.log(pregunta);
       this.categoria = this.preguntaElegida.results[0].category;
-      this.pregunta = this.preguntaElegida.results[0].question;
+      this.pregunta = this.fixTexto(this.preguntaElegida.results[0].question);
       this.opciones = this.preguntaElegida.results[0].incorrect_answers;
-      this.opciones.push(this.preguntaElegida.results[0].correct_answer)
+      this.opciones.push(this.preguntaElegida.results[0].correct_answer);
+      this.preguntaElegida.results[0].correct_answer = this.fixTexto(this.preguntaElegida.results[0].correct_answer)
+      for (let i = 0; i < this.opciones.length; i++) {
+        this.opciones[i] = this.fixTexto(this.opciones[i]);
+      }
       this.shuffleArray(this.opciones);
+
       console.log(this.preguntaElegida.results[0].correct_answer);
+      let img = this.data.obtenerImagenes(this.pregunta);
+      img.subscribe(e => { console.log(e); this.img = e['photos'][0]['src']['landscape']; });
+
+
     });
   }
 
@@ -130,5 +140,45 @@ export class PreguntadosComponent implements OnInit, OnDestroy {
     array.sort(() => { return Math.random() - 0.5; });
   }
 
+  fixTexto(texto: string): string {
+    texto = texto.replace(/&#039;/g, "'")
+      .replace(/&quot;/g, '"')
+      .replace(/&deg;/g, '°')
+      .replace(/&gt;/g, '>')
+      .replace(/&lt;/g, '<')
+      .replace(/&apos;/g, "'")
+      .replace(/&amp;/g, '&')
+      .replace(/&quot;/g, '"')
+      .replace(/&nbsp;/g, ' ')
+      .replace(/&rdquo;/g, '"')
+      .replace(/&ldquo;/g, '"')
+      .replace(/&ntilde;/g, 'ñ')
+      .replace(/&Ntilde;/g, 'Ñ')
+      .replace(/&aacute;/g, 'á')
+      .replace(/&eacute;/g, 'é')
+      .replace(/&iacute;/g, 'í')
+      .replace(/&oacute;/g, 'ó')
+      .replace(/&uacute;/g, 'ú')
+      .replace(/&ntilde;/g, 'ñ')
+      .replace(/&Aacute;/g, 'Á')
+      .replace(/&Eacute;/g, 'É')
+      .replace(/&Iacute;/g, 'Í')
+      .replace(/&Oacute;/g, 'Ó')
+      .replace(/&Uacute;/g, 'Ú')
+      .replace(/&auml;/g, 'ä')
+      .replace(/&euml;/g, 'ë')
+      .replace(/&iuml;/g, 'ï')
+      .replace(/&ouml;/g, 'ö')
+      .replace(/&uuml;/g, 'ü')
+      .replace(/&Auml;/g, 'Ä')
+      .replace(/&Euml;/g, 'Ë')
+      .replace(/&Iuml;/g, 'Ï')
+      .replace(/&Ouml;/g, 'Ö')
+      .replace(/&Uuml;/g, 'Ü')
+
+
+
+    return texto;
+  }
 
 }
